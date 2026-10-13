@@ -45,6 +45,17 @@
   .lede { font-size: 30px; line-height: 1.45; color: var(--muted); max-width: 1120px; margin-top: 22px; }
   .dark .lede { color: #cdd7e2; }
 
+  /* Logo */
+  .corner-logo { position: absolute; top: 26px; left: 40px; height: 72px; z-index: 3; pointer-events: none; }
+  body.dark-slide .corner-logo { display: none; }
+  .logo-badge {
+    background: #fff; border-radius: 28px; padding: 18px 30px; margin-bottom: 34px;
+    box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.55);
+  }
+  .logo-badge img { display: block; height: 170px; }
+  .logo-badge.small { padding: 12px 22px; margin-bottom: 26px; border-radius: 22px; }
+  .logo-badge.small img { height: 110px; }
+
   /* Title */
   .chips { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 44px; }
   .chip { border: 2px solid #3d5570; border-radius: 999px; padding: 10px 24px; font-size: 24px; color: #eef3f8; }
@@ -158,7 +169,10 @@
 <div class="viewport">
 <div class="stage" id="stage">
 
+  <img class="corner-logo" src="assets/logo.png" alt="">
+
   <section class="slide dark active">
+    <div class="logo-badge"><img src="assets/logo.png" alt="Uni+ Education logo"></div>
     <div class="kicker">Uni+ Education Centre · Charity Programme</div>
     <h1>Learn and Play</h1>
     <p class="lede" style="max-width:1000px">Four science and mathematics lessons on our AI platform, then basketball training with A1 Division player 黃律堯.</p>
@@ -256,6 +270,7 @@
   </section>
 
   <section class="slide dark">
+    <div class="logo-badge small"><img src="assets/logo.png" alt="Uni+ Education logo"></div>
     <div class="kicker">Let’s work together</div>
     <h1 style="font-size:96px">We look forward to<br>collaborating with you</h1>
     <p class="lede" style="max-width:980px">Study and sport, free of charge, for students in Yau Tsim Mong who need it most.</p>
