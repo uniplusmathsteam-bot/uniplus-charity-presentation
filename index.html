@@ -23,8 +23,11 @@
   }
 
   /* Slides are laid out at 1600 x 900 and scaled to fit the screen. */
-  .viewport { position: fixed; inset: 0; display: grid; place-items: center; }
-  .stage { width: 1600px; height: 900px; position: relative; transform-origin: center center; flex: none; }
+  .viewport { position: fixed; inset: 0; overflow: hidden; }
+  .stage {
+    width: 1600px; height: 900px; position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%); transform-origin: center center;
+  }
 
   .slide {
     position: absolute; inset: 0; display: none;
@@ -300,7 +303,7 @@
 
   function fit() {
     const s = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
-    stage.style.transform = "scale(" + s + ")";
+    stage.style.transform = "translate(-50%, -50%) scale(" + s + ")";
   }
   window.addEventListener("resize", fit);
   fit();
